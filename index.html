@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ricardo Taira · TI, Audiovisual, Social Media e IAT</title>
+<meta name="description" content="Portfólio de Ricardo Taira: Analista e Professor de TI, Videomaker, Social Media e Instrutor de Armamento e Tiro (IAT), formado pela Combat Tático. Brasília/DF.">
+<meta name="author" content="Ricardo Taira">
+<meta name="theme-color" content="#07070A">
+<meta property="og:title" content="Ricardo Taira · Portfólio">
+<meta property="og:description" content="Tecnologia, audiovisual, redes sociais e instrução de tiro em um só profissional.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2307070A'/%3E%3Ctext x='50' y='64' font-family='Arial' font-size='44' font-weight='900' fill='%23E2B84F' text-anchor='middle'%3ERT%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   TOKENS
+========================================================= */
+:root{
+  --bg:#07070A;
+  --bg-2:#0C0C11;
+  --card:#111117;
+  --card-2:#16161E;
+  --line:rgba(255,255,255,.07);
+  --line-2:rgba(255,255,255,.13);
+  --gold:#E2B84F;
+  --gold-2:#F6DB8E;
+  --gold-3:#A8842A;
+  --text:#F2F0EA;
+  --muted:#A4A2AE;
+  --muted-2:#6F6D7A;
+  /* acentos por área */
+  --ti:#4FD1FF;
+  --vid:#FF5A5A;
+  --soc:#C38BFF;
+  --iat:#A6C64A;
+  --f-display:'Syne',system-ui,sans-serif;
+  --f-body:'Inter',system-ui,sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,monospace;
+  --maxw:1240px;
+  --r:22px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --gut:clamp(20px,4vw,40px);
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{font-family:var(--f-body);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;width:100%;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,video,iframe,svg,canvas{max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--gold);color:#111}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}}
+
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(900px 600px at 85% -10%,rgba(226,184,79,.10),transparent 60%),
+             radial-gradient(800px 600px at -10% 30%,rgba(226,184,79,.05),transparent 60%)}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
+.section{position:relative;z-index:1;padding:clamp(80px,11vw,140px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--gold)}
+.h2{font-family:var(--f-display);font-weight:800;font-size:clamp(2rem,5.6vw,3.8rem);line-height:1.04;letter-spacing:-.02em}
+.h2 .g{background:linear-gradient(100deg,var(--gold-2),var(--gold) 50%,var(--gold-3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:clamp(1rem,1.9vw,1.12rem);max-width:62ch;margin-top:18px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(36px,5vw,56px)}
+.sec-num{font-family:var(--f-display);font-weight:800;font-size:clamp(3.4rem,10vw,7rem);line-height:.8;
+  -webkit-text-stroke:1px var(--line-2);color:transparent;user-select:none}
+
+/* reveal (somente com JS ativo, com failsafe) */
+.js .rv{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}.js .rv.d4{transition-delay:.32s}
+
+/* =========================================================
+   PRELOADER
+========================================================= */
+.loader{position:fixed;inset:0;z-index:999;background:var(--bg);display:none;align-items:center;justify-content:center;flex-direction:column;gap:22px;
+  transition:opacity .7s var(--ease),visibility .7s}
+.js .loader{display:flex}
+.loader.done{opacity:0;visibility:hidden}
+.loader-mark{font-family:var(--f-display);font-weight:800;font-size:3.4rem;letter-spacing:-.04em;
+  background:linear-gradient(100deg,var(--gold-2),var(--gold),var(--gold-3));-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.45;transform:scale(.96)}}
+.loader-bar{width:min(220px,60vw);height:2px;background:var(--line-2);border-radius:2px;overflow:hidden}
+.loader-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-3),var(--gold-2));transition:width .2s}
+.loader-pct{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.2em;color:var(--muted)}
+
+/* =========================================================
+   CURSOR (desktop)
+========================================================= */
+.cur,.cur-dot{position:fixed;top:0;left:0;pointer-events:none;z-index:998;border-radius:50%;display:none}
+.cur{width:38px;height:38px;border:1px solid rgba(226,184,79,.6);transition:width .3s var(--ease),height .3s var(--ease),background .3s;margin:-19px 0 0 -19px}
+.cur-dot{width:6px;height:6px;background:var(--gold);margin:-3px 0 0 -3px}
+.cur.hover{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(226,184,79,.08)}
+@media (hover:hover) and (pointer:fine){.has-cursor .cur,.has-cursor .cur-dot{display:block}}
+
+/* =========================================================
+   PROGRESS + NAV
+========================================================= */
+#prog{position:fixed;top:0;left:0;height:2px;width:0;z-index:200;background:linear-gradient(90deg,var(--gold-3),var(--gold-2))}
+.nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:18px 0;transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.sc{background:rgba(7,7,10,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:11px 0;border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.mono{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex:none;
+  background:linear-gradient(145deg,#1a1a22,#0c0c11);border:1px solid var(--line-2);
+  font-family:var(--f-display);font-weight:800;color:var(--gold);font-size:1rem;letter-spacing:-.03em}
+.brand b{font-family:var(--f-display);font-weight:700;font-size:1rem;display:block;line-height:1.1}
+.brand small{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+.links{display:flex;align-items:center;gap:2px}
+.links a{font-size:.88rem;color:var(--muted);padding:9px 13px;border-radius:999px;transition:color .3s,background .3s}
+.links a:hover,.links a.on{color:var(--text);background:rgba(255,255,255,.05)}
+.btn-nav{font-family:var(--f-display);font-weight:700;font-size:.84rem;padding:11px 20px;border-radius:999px;color:#111;
+  background:linear-gradient(120deg,var(--gold-2),var(--gold));margin-left:8px;white-space:nowrap}
+.burger{display:none;width:46px;height:46px;border-radius:14px;border:1px solid var(--line-2);flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.burger span{width:20px;height:2px;background:var(--text);border-radius:2px;transition:.35s var(--ease)}
+.burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.x span:nth-child(2){opacity:0}
+.burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(86vw,360px);z-index:140;background:linear-gradient(180deg,#101016,#07070a);
+  border-left:1px solid var(--line);padding:100px 28px 30px;transform:translateX(100%);transition:transform .55s var(--ease);
+  display:flex;flex-direction:column;gap:4px;overflow-y:auto}
+.drawer.open{transform:none}
+.drawer a{font-family:var(--f-display);font-weight:700;font-size:1.25rem;padding:13px 4px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
+.drawer a span{font-family:var(--f-mono);font-size:.7rem;color:var(--gold);align-self:center}
+.scrim{position:fixed;inset:0;z-index:130;background:rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:.4s}
+.scrim.on{opacity:1;visibility:visible}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:110px 0 70px}
+#fx{position:absolute;inset:0;z-index:0;width:100%;height:100%}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;z-index:1;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,5vw,70px);align-items:center}
+.badge-av{display:inline-flex;align-items:center;gap:10px;font-size:.8rem;color:var(--muted);border:1px solid var(--line-2);
+  padding:7px 14px 7px 10px;border-radius:999px;background:rgba(255,255,255,.02);margin-bottom:26px}
+.badge-av .dot{width:9px;height:9px;border-radius:50%;background:#3BD16F;box-shadow:0 0 0 0 rgba(59,209,111,.6);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(59,209,111,0)}100%{box-shadow:0 0 0 0 rgba(59,209,111,0)}}
+.hero h1{font-family:var(--f-display);font-weight:800;line-height:.92;letter-spacing:-.04em;font-size:clamp(3.1rem,10.5vw,7.6rem)}
+.hero h1 .row{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ch{display:inline-block;transform:translateY(110%);opacity:0}
+.hero h1.go .ch{animation:chUp .9s var(--ease) forwards}
+@keyframes chUp{to{transform:none;opacity:1}}
+.hero h1 .gold .ch{background:linear-gradient(100deg,var(--gold-2),var(--gold) 55%,var(--gold-3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.typer{margin-top:22px;font-family:var(--f-display);font-weight:700;font-size:clamp(1.15rem,3.3vw,1.85rem);min-height:1.5em;color:var(--text)}
+.typer .pre{color:var(--muted);font-weight:600}
+.typer #typed{color:var(--gold)}
+.typer .caret{display:inline-block;width:2px;height:1em;background:var(--gold);margin-left:4px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-sub{color:var(--muted);max-width:56ch;margin-top:18px;font-size:clamp(1rem,1.8vw,1.1rem)}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--f-display);font-weight:700;font-size:.95rem;
+  padding:16px 28px;border-radius:999px;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-gold{color:#111;background:linear-gradient(120deg,var(--gold-2),var(--gold));box-shadow:0 14px 34px -12px rgba(226,184,79,.6)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 20px 44px -14px rgba(226,184,79,.8)}
+.btn-line{border:1px solid var(--line-2);color:var(--text);background:rgba(255,255,255,.02)}
+.btn-line:hover{transform:translateY(-3px);border-color:var(--gold)}
+.hero-areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.hero-areas a{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:999px;border:1px solid var(--line-2);color:var(--muted);transition:.3s}
+.hero-areas a:hover{color:var(--text);border-color:var(--gold)}
+.hero-areas a i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:1px}
+
+/* cartão de perfil (InBio) */
+.pcard{position:relative;border-radius:28px;padding:26px;background:linear-gradient(160deg,#17171f,#0d0d12);border:1px solid var(--line-2);
+  box-shadow:0 30px 70px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.05);transform-style:preserve-3d;transition:transform .5s var(--ease)}
+.avatar{position:relative;width:100%;aspect-ratio:1;border-radius:22px;overflow:hidden;display:grid;place-items:center;
+  background:radial-gradient(circle at 30% 25%,#2a2416,#0c0c11 70%)}
+.avatar .ring{position:absolute;inset:12%;border-radius:50%;border:1px dashed rgba(226,184,79,.4);animation:spin 26s linear infinite}
+.avatar .ring.r2{inset:22%;border-style:solid;border-color:rgba(226,184,79,.15);animation-duration:18s;animation-direction:reverse}
+.avatar .ring::after{content:"";position:absolute;top:-5px;left:50%;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.avatar .big{position:relative;font-family:var(--f-display);font-weight:800;font-size:clamp(4rem,11vw,6.5rem);letter-spacing:-.06em;
+  background:linear-gradient(140deg,var(--gold-2),var(--gold) 50%,var(--gold-3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.avatar .tagline{position:absolute;bottom:14px;left:14px;right:14px;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.pcard h3{font-family:var(--f-display);font-weight:800;font-size:1.35rem;margin-top:20px}
+.pcard p{color:var(--muted);font-size:.9rem;margin-top:4px}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;border:1px solid var(--line-2);
+  background:linear-gradient(145deg,#1a1a22,#0e0e13);transition:transform .3s var(--ease),border-color .3s}
+.socials a:hover{transform:translateY(-4px);border-color:var(--gold)}
+.socials svg{width:20px;height:20px}
+.pcard .float{position:absolute;font-family:var(--f-mono);font-size:.66rem;padding:8px 12px;border-radius:12px;background:rgba(17,17,23,.92);
+  border:1px solid var(--line-2);backdrop-filter:blur(8px);white-space:nowrap;animation:bob 5s ease-in-out infinite}
+.pcard .float b{color:var(--gold)}
+.pcard .f1{top:18%;left:-30px}
+.pcard .f2{bottom:30%;right:-26px;animation-delay:-2.5s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.scroll-hint{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-family:var(--f-mono);font-size:.6rem;letter-spacing:.3em;color:var(--muted-2);text-transform:uppercase}
+.mouse{width:22px;height:34px;border:1.5px solid var(--muted-2);border-radius:12px;position:relative}
+.mouse::after{content:"";position:absolute;top:6px;left:50%;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--gold);animation:wheel 1.8s infinite}
+@keyframes wheel{to{transform:translateY(10px);opacity:0}}
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+.mq{position:relative;z-index:1;overflow:hidden;border-block:1px solid var(--line);background:var(--bg-2);padding:18px 0;transform:rotate(-1.2deg);margin:10px -10px}
+.mq.alt{transform:rotate(1.2deg);background:linear-gradient(90deg,var(--gold-3),var(--gold),var(--gold-3));border:0;margin-top:-12px}
+.mq-t{display:flex;width:max-content;animation:mq 40s linear infinite}
+.mq.alt .mq-t{animation-direction:reverse;animation-duration:46s}
+.mq span{font-family:var(--f-display);font-weight:700;font-size:clamp(1rem,3vw,1.5rem);white-space:nowrap;padding:0 clamp(18px,3vw,30px);display:inline-flex;align-items:center;gap:clamp(18px,3vw,30px)}
+.mq span::after{content:"✦";color:var(--gold);font-size:.8em}
+.mq.alt span{color:#111}.mq.alt span::after{color:#111}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* =========================================================
+   BENTO (GridX)
+========================================================= */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(150px,auto);gap:16px}
+.tile{position:relative;border-radius:var(--r);padding:24px;background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--line);
+  overflow:hidden;transition:transform .5s var(--ease),border-color .4s}
+.tile:hover{border-color:var(--line-2)}
+.tile::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(226,184,79,.10),transparent 45%)}
+.tile:hover::before{opacity:1}
+.tile .lbl{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2);margin-bottom:10px;display:block}
+.t-intro{grid-column:span 2;grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between}
+.t-intro h3{font-family:var(--f-display);font-weight:800;font-size:clamp(1.5rem,3.2vw,2.2rem);line-height:1.12}
+.t-intro p{color:var(--muted);margin-top:14px}
+.t-intro .sig{font-family:var(--f-mono);font-size:.78rem;color:var(--gold);margin-top:18px}
+.t-stat .n{font-family:var(--f-display);font-weight:800;font-size:clamp(2.4rem,5vw,3.4rem);line-height:1}
+.t-stat .n em{font-style:normal;color:var(--gold)}
+.t-stat p{color:var(--muted);font-size:.86rem;margin-top:8px}
+.t-loc{grid-column:span 2}
+.t-loc .row{display:flex;align-items:center;gap:18px}
+.radar{width:86px;height:86px;flex:none;border-radius:50%;position:relative;border:1px solid var(--line-2);
+  background:repeating-radial-gradient(circle,transparent 0 13px,rgba(226,184,79,.08) 13px 14px)}
+.radar::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(226,184,79,.45),transparent 25%);animation:spin 3s linear infinite}
+.radar::after{content:"";position:absolute;top:50%;left:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+.t-loc h4{font-family:var(--f-display);font-size:1.3rem}
+.t-loc p{color:var(--muted);font-size:.9rem}
+.t-tools{grid-column:span 2}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:.8rem;padding:7px 12px;border-radius:10px;border:1px solid var(--line-2);background:rgba(255,255,255,.02);color:var(--text)}
+.t-cta{grid-column:span 2;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:linear-gradient(130deg,#2a2210,#111117 60%);border-color:rgba(226,184,79,.25)}
+.t-cta h4{font-family:var(--f-display);font-weight:800;font-size:clamp(1.3rem,3vw,1.8rem);line-height:1.1}
+.t-cta .go{width:62px;height:62px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#111;transition:transform .4s var(--ease)}
+.t-cta:hover .go{transform:rotate(-45deg) scale(1.08)}
+.t-cta .go svg{width:24px;height:24px}
+
+/* cards das 4 áreas */
+.areas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:16px}
+.area{position:relative;display:flex;flex-direction:column;gap:12px;padding:26px 22px;border-radius:var(--r);border:1px solid var(--line);
+  background:linear-gradient(170deg,var(--card-2),var(--card));overflow:hidden;transition:transform .5s var(--ease),border-color .4s}
+.area:hover{transform:translateY(-8px);border-color:var(--ac)}
+.area .ix{font-family:var(--f-mono);font-size:.7rem;color:var(--ac)}
+.area .ic{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:color-mix(in srgb,var(--ac) 14%,transparent);border:1px solid color-mix(in srgb,var(--ac) 35%,transparent)}
+.area .ic svg{width:26px;height:26px;stroke:var(--ac)}
+.area h3{font-family:var(--f-display);font-weight:800;font-size:1.2rem;line-height:1.2}
+.area p{color:var(--muted);font-size:.88rem}
+.area .more{margin-top:auto;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;color:var(--ac);text-transform:uppercase}
+.area::after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;right:-60px;top:-60px;background:var(--ac);opacity:.07;filter:blur(10px);transition:opacity .4s}
+.area:hover::after{opacity:.16}
+
+/* =========================================================
+   ÁREA 01 · TI
+========================================================= */
+.zone{position:relative}
+.zone::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(700px 400px at 90% 10%,color-mix(in srgb,var(--ac) 8%,transparent),transparent 60%)}
+.z-ti{--ac:var(--ti)}
+.z-vid{--ac:var(--vid)}
+.z-soc{--ac:var(--soc)}
+.z-iat{--ac:var(--iat)}
+.zone .eyebrow{color:var(--ac)}
+.zone .eyebrow::before{background:var(--ac)}
+.zone .h2 .ac{color:var(--ac)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:start}
+
+.term{border-radius:18px;overflow:hidden;border:1px solid var(--line-2);background:#0A0D12;box-shadow:0 30px 60px -30px rgba(0,0,0,.9)}
+.term-top{display:flex;align-items:center;gap:7px;padding:12px 16px;background:#11151c;border-bottom:1px solid var(--line)}
+.term-top i{width:11px;height:11px;border-radius:50%;background:#ff5f57}
+.term-top i:nth-child(2){background:#febc2e}.term-top i:nth-child(3){background:#28c840}
+.term-top span{margin-left:10px;font-family:var(--f-mono);font-size:.7rem;color:var(--muted-2)}
+.term-body{padding:18px;font-family:var(--f-mono);font-size:clamp(.72rem,1.9vw,.84rem);line-height:1.8;min-height:300px;color:#c9d6e3;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+.term-body .p{color:var(--ti)}
+.term-body .ok{color:#3BD16F}
+.term-body .w{color:var(--gold)}
+.term-body .cur-t{display:inline-block;width:8px;height:1em;background:var(--ti);vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+
+.skills{display:flex;flex-direction:column;gap:16px;margin-top:26px}
+.sk .top{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:8px}
+.sk .top b{font-weight:600}
+.sk .top span{font-family:var(--f-mono);color:var(--ac);font-size:.78rem}
+.sk .bar{height:6px;border-radius:6px;background:rgba(255,255,255,.06);overflow:hidden}
+.sk .bar i{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,color-mix(in srgb,var(--ac) 50%,#000),var(--ac));transition:width 1.6s var(--ease)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;margin-top:clamp(36px,5vw,56px)}
+.svc{position:relative;padding:24px;border-radius:var(--r);border:1px solid var(--line);background:linear-gradient(170deg,var(--card-2),var(--card));
+  transition:transform .5s var(--ease),border-color .4s;overflow:hidden}
+.svc:hover{transform:translateY(-6px);border-color:color-mix(in srgb,var(--ac) 55%,transparent)}
+.svc .ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;margin-bottom:16px;
+  background:color-mix(in srgb,var(--ac) 13%,transparent);border:1px solid color-mix(in srgb,var(--ac) 30%,transparent)}
+.svc .ic svg{width:22px;height:22px;stroke:var(--ac)}
+.svc h4{font-family:var(--f-display);font-weight:700;font-size:1.08rem;margin-bottom:8px;line-height:1.25}
+.svc p{color:var(--muted);font-size:.88rem}
+.svc .tag{display:inline-block;margin-top:14px;font-family:var(--f-mono);font-size:.64rem;letter-spacing:.08em;color:var(--ac);text-transform:uppercase}
+
+/* projetos TI */
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;margin-top:16px}
+.pj{display:flex;gap:16px;align-items:flex-start;padding:22px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);transition:border-color .4s,transform .5s var(--ease)}
+.pj:hover{border-color:var(--line-2);transform:translateX(4px)}
+.pj .k{font-family:var(--f-mono);font-size:.7rem;color:var(--ac);border:1px solid color-mix(in srgb,var(--ac) 35%,transparent);border-radius:8px;padding:5px 8px;flex:none}
+.pj h5{font-family:var(--f-display);font-size:1.02rem;font-weight:700;margin-bottom:4px}
+.pj p{color:var(--muted);font-size:.86rem}
+
+/* =========================================================
+   ÁREA 02 · VIDEOMAKER
+========================================================= */
+.vf{position:relative;border-radius:20px;padding:clamp(22px,4vw,40px);border:1px solid var(--line-2);background:
+  linear-gradient(160deg,rgba(255,90,90,.06),transparent 50%),#0b0b0f;overflow:hidden}
+.vf .c{position:absolute;width:26px;height:26px;border:2px solid rgba(255,255,255,.5)}
+.vf .c1{top:14px;left:14px;border-right:0;border-bottom:0}.vf .c2{top:14px;right:14px;border-left:0;border-bottom:0}
+.vf .c3{bottom:14px;left:14px;border-right:0;border-top:0}.vf .c4{bottom:14px;right:14px;border-left:0;border-top:0}
+.vf-hud{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;color:var(--muted);padding:6px 18px}
+.rec{display:inline-flex;align-items:center;gap:8px;color:var(--text)}
+.rec i{width:9px;height:9px;border-radius:50%;background:var(--vid);box-shadow:0 0 10px var(--vid);animation:blink 1.2s steps(1) infinite}
+.vf-center{text-align:center;padding:clamp(30px,6vw,56px) 10px}
+.vf-center .big{font-family:var(--f-display);font-weight:800;font-size:clamp(3rem,10vw,6rem);line-height:1}
+.vf-center .big em{font-style:normal;color:var(--vid)}
+.vf-center p{color:var(--muted);margin-top:10px}
+.cross{position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px;opacity:.25;pointer-events:none}
+.cross::before,.cross::after{content:"";position:absolute;background:#fff}
+.cross::before{left:50%;top:0;bottom:0;width:1px}.cross::after{top:50%;left:0;right:0;height:1px}
+.timecode{font-variant-numeric:tabular-nums}
+.gear{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px;margin-top:20px}
+.gear div{padding:16px;border-radius:16px;border:1px solid var(--line);background:var(--card)}
+.gear b{display:block;font-family:var(--f-display);font-size:.98rem}
+.gear span{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;color:var(--vid);text-transform:uppercase}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:clamp(36px,5vw,50px) 0 22px}
+.chip{font-family:var(--f-display);font-weight:600;font-size:.86rem;padding:10px 18px;border-radius:999px;border:1px solid var(--line-2);color:var(--muted);transition:.3s var(--ease)}
+.chip:hover{color:var(--text);border-color:var(--vid)}
+.chip.on{background:var(--vid);border-color:var(--vid);color:#fff}
+.works{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:18px}
+.wk{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--card);min-width:0}
+.wk.hide{display:none}
+.wk.pop{animation:pop .6s var(--ease) both}
+@keyframes pop{from{opacity:0;transform:translateY(18px)}}
+.wk-h{padding:16px 18px;border-bottom:1px solid var(--line)}
+.wk-h .t{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.wk-cat{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vid);border:1px solid rgba(255,90,90,.35);padding:4px 8px;border-radius:7px}
+.wk-n{font-family:var(--f-mono);font-size:.72rem;color:var(--muted-2)}
+.wk-h h4{font-family:var(--f-display);font-size:1rem;line-height:1.25;margin-bottom:10px}
+.bdg{display:flex;flex-wrap:wrap;gap:6px}
+.bdg span{font-family:var(--f-mono);font-size:.6rem;color:var(--muted);border:1px solid var(--line-2);padding:3px 8px;border-radius:6px}
+.note{margin-top:12px;font-size:.74rem;line-height:1.5;color:var(--gold);background:rgba(226,184,79,.07);border:1px solid rgba(226,184,79,.25);padding:9px 11px;border-radius:10px}
+.wk-b{position:relative;background:#050507;min-height:380px;display:flex;align-items:center;justify-content:center;overflow:hidden;min-width:0}
+.wk-b .instagram-media{margin:0 !important;min-width:0 !important;width:100% !important;max-width:100% !important;border:0 !important;border-radius:0 !important;box-shadow:none !important}
+.wk-b iframe{max-width:100% !important;min-width:0 !important;width:100% !important}
+.wk-b.link{min-height:0;display:block}
+.load{display:flex;flex-direction:column;align-items:center;gap:12px;font-family:var(--f-mono);font-size:.72rem;color:var(--muted);padding:30px;text-align:center}
+.spin{width:30px;height:30px;border-radius:50%;border:3px solid var(--line-2);border-top-color:var(--vid);animation:spin 1s linear infinite}
+.yt{position:relative;display:block}
+.yt img{width:100%;height:auto;display:block}
+.yt.nocover{aspect-ratio:16/9;background:linear-gradient(150deg,#2a1010,#050507)}
+.yt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.55))}
+.yt .pl{position:absolute;top:50%;left:50%;z-index:2;width:70px;height:70px;margin:-35px;border-radius:50%;display:grid;place-items:center;background:rgba(255,40,40,.88);transition:transform .35s var(--ease)}
+.yt:hover .pl{transform:scale(1.1)}
+.yt .pl svg{width:26px;height:26px;fill:#fff;margin-left:3px}
+.yt .tg{position:absolute;bottom:12px;right:12px;z-index:2;font-family:var(--f-mono);font-size:.62rem;color:#fff;background:rgba(0,0,0,.6);padding:5px 9px;border-radius:7px}
+
+/* =========================================================
+   ÁREA 03 · SOCIAL MEDIA
+========================================================= */
+.phone-wrap{display:flex;justify-content:center;position:relative}
+.phone{position:relative;width:min(290px,78vw);aspect-ratio:9/19;border-radius:44px;padding:12px;background:linear-gradient(160deg,#2a2a33,#0c0c10);
+  border:1px solid var(--line-2);box-shadow:0 40px 80px -30px rgba(195,139,255,.35),0 30px 60px -30px rgba(0,0,0,.9)}
+.screen{position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:#0b0b10}
+.notch{position:absolute;top:10px;left:50%;width:34%;height:22px;margin-left:-17%;border-radius:20px;background:#000;z-index:5}
+.ph-top{display:flex;align-items:center;justify-content:space-between;padding:42px 14px 10px;font-family:var(--f-display);font-weight:700;font-size:.9rem}
+.stories{display:flex;gap:9px;padding:4px 14px 12px;overflow:hidden}
+.st{width:46px;height:46px;flex:none;border-radius:50%;padding:2px;background:conic-gradient(var(--soc),var(--gold),var(--vid),var(--soc))}
+.st i{display:block;width:100%;height:100%;border-radius:50%;border:2px solid #0b0b10;background:linear-gradient(135deg,#2b2b38,#16161e)}
+.feed{position:absolute;left:0;right:0;top:132px;bottom:0;overflow:hidden}
+.feed-t{animation:feed 16s linear infinite}
+@keyframes feed{to{transform:translateY(-50%)}}
+.post{margin:0 12px 14px;border-radius:16px;overflow:hidden;background:#13131a;border:1px solid var(--line)}
+.post .img{aspect-ratio:1;position:relative}
+.post .img b{position:absolute;left:12px;bottom:10px;font-family:var(--f-display);font-size:.95rem;line-height:1.1;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.post .act{display:flex;gap:10px;padding:9px 12px;font-size:.72rem;color:var(--muted);align-items:center}
+.post .act .hrt{color:#ff3b6b;animation:beat 1.4s infinite}
+@keyframes beat{15%{transform:scale(1.3)}30%{transform:scale(1)}}
+.bubble{position:absolute;font-family:var(--f-mono);font-size:.7rem;padding:9px 13px;border-radius:14px;background:rgba(17,17,23,.94);border:1px solid var(--line-2);white-space:nowrap;animation:bob 5s ease-in-out infinite}
+.bubble b{color:var(--soc)}
+.b1{top:14%;left:0}.b2{top:48%;right:0;animation-delay:-2s}.b3{bottom:12%;left:4%;animation-delay:-3.5s}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px;margin-top:clamp(36px,5vw,56px);counter-reset:s}
+.step{position:relative;padding:22px;border-radius:var(--r);border:1px solid var(--line);background:var(--card)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--f-display);font-weight:800;font-size:2rem;color:transparent;-webkit-text-stroke:1px var(--soc);display:block;margin-bottom:10px}
+.step h5{font-family:var(--f-display);font-size:1rem;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.85rem}
+
+/* =========================================================
+   ÁREA 04 · IAT
+========================================================= */
+.hud{position:relative;aspect-ratio:1;max-width:420px;margin-inline:auto;width:100%}
+.hud svg{width:100%;height:100%;overflow:visible}
+.hud .rot{transform-origin:200px 200px;animation:spin 30s linear infinite}
+.hud .rot2{transform-origin:200px 200px;animation:spin 18s linear infinite reverse}
+.hud .ret{transform-origin:200px 200px;animation:aim 6s ease-in-out infinite}
+@keyframes aim{25%{transform:translate(6px,-4px)}50%{transform:translate(-5px,3px)}75%{transform:translate(3px,5px)}}
+.hud-lbl{position:absolute;font-family:var(--f-mono);font-size:.64rem;letter-spacing:.12em;color:var(--iat);text-transform:uppercase}
+.hud-lbl.l1{top:6%;left:0}.hud-lbl.l2{top:6%;right:0;text-align:right}.hud-lbl.l3{bottom:4%;left:0}.hud-lbl.l4{bottom:4%;right:0;text-align:right}
+.cred{display:flex;gap:16px;align-items:center;padding:20px;border-radius:var(--r);margin-top:24px;
+  border:1px solid rgba(166,198,74,.35);background:linear-gradient(130deg,rgba(166,198,74,.1),transparent 70%)}
+.cred .seal{width:62px;height:62px;flex:none;border-radius:50%;display:grid;place-items:center;border:2px solid var(--iat);
+  font-family:var(--f-display);font-weight:800;color:var(--iat);font-size:.95rem}
+.cred b{display:block;font-family:var(--f-display);font-size:1.05rem;line-height:1.25}
+.cred span{color:var(--muted);font-size:.86rem}
+.law{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px;margin-top:16px}
+.law div{padding:18px;border-radius:16px;border:1px dashed rgba(166,198,74,.35);background:rgba(166,198,74,.03)}
+.law b{font-family:var(--f-mono);font-size:.78rem;color:var(--iat)}
+.law p{color:var(--muted);font-size:.84rem;margin-top:6px}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px;margin-top:16px}
+.rule{display:flex;gap:14px;padding:18px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.rule .n{font-family:var(--f-display);font-weight:800;font-size:1.4rem;color:var(--iat);line-height:1}
+.rule p{font-size:.88rem;color:var(--muted)}
+.rule p b{color:var(--text);font-weight:600}
+
+/* =========================================================
+   CURRÍCULO (abas InBio)
+========================================================= */
+.tabs{display:flex;gap:6px;padding:6px;border-radius:18px;background:var(--card);border:1px solid var(--line);width:max-content;max-width:100%;overflow-x:auto;margin-bottom:28px}
+.tab{font-family:var(--f-display);font-weight:700;font-size:.9rem;padding:12px 20px;border-radius:13px;color:var(--muted);white-space:nowrap;transition:.3s}
+.tab.on{color:#111;background:linear-gradient(120deg,var(--gold-2),var(--gold))}
+.pane{display:none}
+.pane.on{display:block;animation:pop .6s var(--ease)}
+.tl{position:relative;display:grid;gap:16px;padding-left:26px}
+.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--gold),transparent)}
+.tl-i{position:relative;padding:22px;border-radius:var(--r);background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--line);transition:border-color .4s}
+.tl-i:hover{border-color:var(--line-2)}
+.tl-i::before{content:"";position:absolute;left:-26px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--gold)}
+.tl-i .when{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold);text-transform:uppercase}
+.tl-i h4{font-family:var(--f-display);font-size:1.12rem;margin:6px 0 2px;line-height:1.25}
+.tl-i .org{font-size:.86rem;color:var(--text);opacity:.8}
+.tl-i p{color:var(--muted);font-size:.88rem;margin-top:10px}
+.cols2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.box{padding:24px;border-radius:var(--r);background:var(--card);border:1px solid var(--line)}
+.box h5{font-family:var(--f-display);font-size:1.05rem;margin-bottom:14px}
+
+/* =========================================================
+   CONTATO + FOOTER
+========================================================= */
+.contact{text-align:center;overflow:hidden}
+.contact .big{font-family:var(--f-display);font-weight:800;font-size:clamp(2.6rem,10vw,7.5rem);line-height:.95;letter-spacing:-.04em}
+.contact .big .g{background:linear-gradient(100deg,var(--gold-2),var(--gold),var(--gold-3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.contact .lead{margin:22px auto 0}
+.contact .cta{justify-content:center}
+.ring-bg{position:absolute;left:50%;top:50%;width:min(900px,160vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
+  border:1px solid var(--line);pointer-events:none;z-index:-1}
+.ring-bg::before{content:"";position:absolute;inset:14%;border-radius:50%;border:1px solid var(--line)}
+.ring-bg::after{content:"";position:absolute;inset:30%;border-radius:50%;border:1px solid rgba(226,184,79,.18)}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:36px 0;background:var(--bg-2)}
+.ft{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+.ft p{color:var(--muted-2);font-size:.82rem}
+.ft .sig{font-family:var(--f-mono);color:var(--gold);font-size:.8rem}
+.top-btn{position:fixed;right:18px;bottom:18px;z-index:120;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;
+  background:var(--card-2);border:1px solid var(--line-2);opacity:0;visibility:hidden;transform:translateY(12px);transition:.4s var(--ease)}
+.top-btn.on{opacity:1;visibility:visible;transform:none}
+.top-btn svg{width:20px;height:20px;stroke:var(--gold);position:relative}
+.top-btn .pr{position:absolute;inset:-1px;width:calc(100% + 2px);height:calc(100% + 2px);transform:rotate(-90deg)}
+.top-btn .pr circle{fill:none;stroke:var(--gold);stroke-width:2;stroke-dasharray:151;stroke-dashoffset:151}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+@media (max-width:1080px){
+  .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .areas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pcard .f1{left:-10px}.pcard .f2{right:-10px}
+}
+@media (max-width:900px){
+  .links,.btn-nav{display:none}
+  .burger{display:flex}
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-grid .cta,.hero-areas{justify-content:center}
+  .hero-sub{margin-inline:auto}
+  .pcard{max-width:380px;margin-inline:auto;width:100%}
+  .split{grid-template-columns:1fr}
+  .split.rev > :first-child{order:2}
+  .phone-wrap{padding:0 10px}
+}
+@media (max-width:600px){
+  .bento,.areas{grid-template-columns:minmax(0,1fr)}
+  .t-intro,.t-loc,.t-tools,.t-cta{grid-column:auto;grid-row:auto}
+  .pcard .float{display:none}
+  .bubble{display:none}
+  .cta .btn{width:100%}
+  .sec-num{display:none}
+  .tl{padding-left:22px}
+  .tl-i{padding:18px}
+  .tl-i::before{left:-22px}
+  .scroll-hint{display:none}
+  .mq{margin:10px -4px}
+  .tab{padding:11px 14px;font-size:.84rem}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark">RT</div>
+  <div class="loader-bar"><i id="ldBar"></i></div>
+  <div class="loader-pct" id="ldPct">0%</div>
+</div>
+<div class="cur" id="cur"></div><div class="cur-dot" id="curDot"></div>
+<div id="prog"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#inicio" class="brand" aria-label="Início">
+      <span class="mono">RT</span>
+      <span><b>Ricardo Taira</b><small>TI · Vídeo · Social · IAT</small></span>
+    </a>
+    <nav class="links" aria-label="Principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#ti">TI</a>
+      <a href="#video">Vídeo</a>
+      <a href="#social">Social</a>
+      <a href="#iat">IAT</a>
+      <a href="#curriculo">Currículo</a>
+      <a href="#contato" class="btn-nav">Vamos conversar</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <a href="#sobre">Sobre <span>00</span></a>
+  <a href="#ti">Tecnologia <span>01</span></a>
+  <a href="#video">Videomaker <span>02</span></a>
+  <a href="#social">Social Media <span>03</span></a>
+  <a href="#iat">Armamento e Tiro <span>04</span></a>
+  <a href="#curriculo">Currículo <span>05</span></a>
+  <a href="#contato">Contato <span>06</span></a>
+</aside>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge-av"><span class="dot"></span> Disponível para novos projetos · Brasília/DF</span>
+      <h1 id="heroName"><span class="row" data-split>Ricardo</span><span class="row gold" data-split>Taira</span></h1>
+      <div class="typer"><span class="pre">Sou </span><span id="typed">Analista e Professor de TI</span><span class="caret"></span></div>
+      <p class="hero-sub">Tecnologia, audiovisual, redes sociais e instrução de tiro em um só profissional. Mais de 20 anos criando imagem, mais de 10 anos em TI e mais de 11 anos no ensino superior.</p>
+      <div class="cta">
+        <a href="#sobre" class="btn btn-gold mag">Conheça meu trabalho
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        <a href="https://wa.me/5561999435583" target="_blank" rel="noopener" class="btn btn-line mag">WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.5 8.5 0 01-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1121 11.5z"/></svg></a>
+      </div>
+      <div class="hero-areas">
+        <a href="#ti"><i style="background:var(--ti)"></i>TI</a>
+        <a href="#video"><i style="background:var(--vid)"></i>Videomaker</a>
+        <a href="#social"><i style="background:var(--soc)"></i>Social Media</a>
+        <a href="#iat"><i style="background:var(--iat)"></i>IAT</a>
+      </div>
+    </div>
+
+    <div class="pcard tilt" id="pcard">
+      <div class="avatar">
+        <span class="ring"></span><span class="ring r2"></span>
+        <span class="big">RT</span>
+        <div class="tagline"><span>@ricardo_taira</span><span>Brasília/DF</span></div>
+      </div>
+      <h3>Ricardo Taira</h3>
+      <p>Analista e Professor de TI · Videomaker · Social Media · Instrutor de Armamento e Tiro (IAT)</p>
+      <div class="socials">
+        <a href="https://instagram.com/ricardo_taira" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E2B84F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E2B84F" stroke="none"/></svg></a>
+        <a href="https://wa.me/5561999435583" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E2B84F" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.5 8.5 0 01-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1121 11.5z"/></svg></a>
+        <a href="#curriculo" aria-label="Currículo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E2B84F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></a>
+      </div>
+      <span class="float f1"><b>20+</b> anos de audiovisual</span>
+      <span class="float f2"><b>10+</b> anos em TI</span>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span class="mouse"></span>Role</div>
+</section>
+
+<!-- MARQUEES -->
+<div class="mq" aria-hidden="true"><div class="mq-t">
+  <span>Infraestrutura de TI</span><span>Active Directory</span><span>Google Workspace</span><span>pfSense</span><span>Ubiquiti</span><span>Automação</span><span>Dashboards BI</span><span>Ensino de TI</span>
+  <span>Infraestrutura de TI</span><span>Active Directory</span><span>Google Workspace</span><span>pfSense</span><span>Ubiquiti</span><span>Automação</span><span>Dashboards BI</span><span>Ensino de TI</span>
+</div></div>
+<div class="mq alt" aria-hidden="true"><div class="mq-t">
+  <span>Sony A6600</span><span>DJI Mini 3</span><span>Premiere Pro</span><span>CapCut</span><span>Reels</span><span>Stories</span><span>Transmissões</span><span>Instrução de Tiro</span>
+  <span>Sony A6600</span><span>DJI Mini 3</span><span>Premiere Pro</span><span>CapCut</span><span>Reels</span><span>Stories</span><span>Transmissões</span><span>Instrução de Tiro</span>
+</div></div>
+
+<!-- SOBRE / BENTO -->
+<section class="section" id="sobre">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow rv">Sobre mim</p>
+        <h2 class="h2 rv d1">Um profissional,<br><span class="g">quatro especialidades.</span></h2>
+      </div>
+      <span class="sec-num rv">00</span>
+    </div>
+
+    <div class="bento">
+      <div class="tile t-intro rv glow">
+        <div>
+          <span class="lbl">Quem sou</span>
+          <h3>Tecnologia que resolve, imagem que comunica.</h3>
+          <p>Sou analista de TI e produtor audiovisual em Brasília. Construo soluções técnicas, ensino tecnologia, produzo vídeo, cuido de redes sociais e atuo como Instrutor de Armamento e Tiro (IAT), formado pela Combat Tático. Cada área alimenta a outra: o raciocínio técnico organiza a criação, e a criação torna a técnica compreensível.</p>
+        </div>
+        <span class="sig">@ricardo_taira</span>
+      </div>
+      <div class="tile t-stat rv d1 glow"><span class="lbl">Audiovisual</span><div class="n"><span class="cnt" data-to="20">0</span><em>+</em></div><p>anos produzindo vídeo</p></div>
+      <div class="tile t-stat rv d2 glow"><span class="lbl">Tecnologia</span><div class="n"><span class="cnt" data-to="10">0</span><em>+</em></div><p>anos em TI e infraestrutura</p></div>
+      <div class="tile t-stat rv d1 glow"><span class="lbl">Educação</span><div class="n"><span class="cnt" data-to="11">0</span><em>+</em></div><p>anos no ensino superior</p></div>
+      <div class="tile t-stat rv d2 glow"><span class="lbl">Parceria</span><div class="n"><span class="cnt" data-to="10">0</span><em>+</em></div><p>anos com a produtora Video Brun</p></div>
+      <div class="tile t-loc rv glow">
+        <span class="lbl">Base</span>
+        <div class="row">
+          <div class="radar"></div>
+          <div><h4>Brasília · DF</h4><p>Atendimento presencial no DF e entorno, e remoto para todo o Brasil.</p></div>
+        </div>
+      </div>
+      <div class="tile t-tools rv d1 glow">
+        <span class="lbl">Ferramentas do dia a dia</span>
+        <div class="chips">
+          <span>Active Directory</span><span>Google Workspace</span><span>pfSense</span><span>Ubiquiti</span><span>Python</span><span>HTML/CSS/JS</span><span>Premiere Pro</span><span>CapCut</span><span>Sony A6600</span><span>DJI Mini 3</span>
+        </div>
+      </div>
+      <a href="#contato" class="tile t-cta rv d2">
+        <h4>Vamos tirar seu<br>projeto do papel?</h4>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+
+    <div class="areas">
+      <a href="#ti" class="area rv" style="--ac:var(--ti)">
+        <span class="ix">01 · Principal</span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M7 8l3 2-3 2M13 12h4"/></svg></span>
+        <h3>Analista e Professor de TI</h3>
+        <p>Infraestrutura, redes, sistemas, automação e ensino de tecnologia.</p>
+        <span class="more">Ver área →</span>
+      </a>
+      <a href="#video" class="area rv d1" style="--ac:var(--vid)">
+        <span class="ix">02</span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span>
+        <h3>Videomaker</h3>
+        <p>Captação, edição, transmissões, eventos e making of de cinema.</p>
+        <span class="more">Ver área →</span>
+      </a>
+      <a href="#social" class="area rv d2" style="--ac:var(--soc)">
+        <span class="ix">03</span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 18h.01M9 7.5a3 3 0 016 0c0 2-3 3.5-3 3.5S9 9.5 9 7.5z"/></svg></span>
+        <h3>Social Media</h3>
+        <p>Planejamento, conteúdo, atendimento, reputação e relatórios.</p>
+        <span class="more">Ver área →</span>
+      </a>
+      <a href="#iat" class="area rv d3" style="--ac:var(--iat)">
+        <span class="ix">04</span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/></svg></span>
+        <h3>Instrutor de Armamento e Tiro</h3>
+        <p>IAT formado pela Combat Tático, com foco em segurança e legislação.</p>
+        <span class="more">Ver área →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 01 TI -->
+<section class="section zone z-ti" id="ti">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow rv">Área 01 · Principal</p>
+        <h2 class="h2 rv d1">Analista e<br><span class="ac">Professor de TI.</span></h2>
+        <p class="lead rv d2">Mais de 10 anos mantendo ambientes de tecnologia funcionando em instituição de ensino superior, com infraestrutura on-premises e nuvem, redes, segurança, suporte e automação. Também ensino tecnologia e treino equipes para usar as ferramentas que desenvolvo.</p>
+      </div>
+      <span class="sec-num rv">01</span>
+    </div>
+
+    <div class="split">
+      <div class="term rv">
+        <div class="term-top"><i></i><i></i><i></i><span>ricardo@uni-ls:~</span></div>
+        <div class="term-body" id="term"></div>
+      </div>
+      <div class="rv d1">
+        <div class="skills">
+          <div class="sk"><div class="top"><b>Infraestrutura e redes</b><span>95%</span></div><div class="bar"><i data-w="95"></i></div></div>
+          <div class="sk"><div class="top"><b>Active Directory e Google Workspace</b><span>92%</span></div><div class="bar"><i data-w="92"></i></div></div>
+          <div class="sk"><div class="top"><b>Firewall (pfSense, iptables)</b><span>88%</span></div><div class="bar"><i data-w="88"></i></div></div>
+          <div class="sk"><div class="top"><b>Wireless Ubiquiti</b><span>90%</span></div><div class="bar"><i data-w="90"></i></div></div>
+          <div class="sk"><div class="top"><b>Automação e dados (Python, planilhas, BI)</b><span>86%</span></div><div class="bar"><i data-w="86"></i></div></div>
+          <div class="sk"><div class="top"><b>Desenvolvimento web (HTML, CSS, JS)</b><span>88%</span></div><div class="bar"><i data-w="88"></i></div></div>
+          <div class="sk"><div class="top"><b>Ensino e treinamento</b><span>94%</span></div><div class="bar"><i data-w="94"></i></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg></div>
+        <h4>Infraestrutura on-premises e nuvem</h4><p>Servidores, Active Directory, Google Workspace, backups e gestão de contas e permissões.</p><span class="tag">Infra</span></div>
+      <div class="svc rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>Redes e segurança</h4><p>Firewall pfSense e iptables, segmentação, wireless Ubiquiti e boas práticas de proteção.</p><span class="tag">Rede</span></div>
+      <div class="svc rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.8-3.8a6 6 0 01-7.9 7.9l-6.9 6.9a2.1 2.1 0 01-3-3l6.9-6.9a6 6 0 017.9-7.9z"/></svg></div>
+        <h4>Suporte técnico</h4><p>Atendimento a usuários, manutenção de equipamentos, CFTV, videoconferência e sonorização.</p><span class="tag">Suporte</span></div>
+      <div class="svc rv d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h4>Professor e instrutor de TI</h4><p>Aulas, treinamentos presenciais e materiais didáticos interativos para equipes e alunos.</p><span class="tag">Ensino</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="pj rv"><span class="k">IA</span><div><h5>Base de conhecimento Markchat AI</h5><p>Suíte de 11 documentos que orienta a IA de atendimento da Central de Matrículas sobre 28 cursos, setores e regras de conduta.</p></div></div>
+      <div class="pj rv d1"><span class="k">BI</span><div><h5>Painel de Atendimento Presencial</h5><p>Dashboard HTML com gráficos animados e indicadores a partir das filas do sistema de senhas, com pipeline de dados em Python.</p></div></div>
+      <div class="pj rv"><span class="k">BI</span><div><h5>Dashboards de perfil de alunos</h5><p>Painéis de distribuição por faixa etária e por região administrativa para apoiar decisões acadêmicas e de marketing.</p></div></div>
+      <div class="pj rv d1"><span class="k">EAD</span><div><h5>Treinamentos interativos</h5><p>Apresentações em HTML publicadas no GitHub Pages para capacitar equipes em ferramentas e processos.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 VIDEOMAKER -->
+<section class="section zone z-vid" id="video">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow rv">Área 02</p>
+        <h2 class="h2 rv d1">Videomaker e<br><span class="ac">produtor audiovisual.</span></h2>
+        <p class="lead rv d2">Mais de 20 anos de captação e edição: conteúdo para redes sociais, eventos, transmissões ao vivo, videoaulas, shows, clipes e cinema. Do equipamento completo ao celular, entrego o melhor resultado possível em cada situação.</p>
+      </div>
+      <span class="sec-num rv">02</span>
+    </div>
+
+    <div class="vf rv">
+      <span class="c c1"></span><span class="c c2"></span><span class="c c3"></span><span class="c c4"></span>
+      <div class="vf-hud">
+        <span class="rec"><i></i> REC</span>
+        <span class="timecode" id="tc">00:00:00:00</span>
+        <span>4K · 24 FPS</span>
+      </div>
+      <div class="vf-center">
+        <div class="big"><span class="cnt" data-to="20">0</span><em>+</em></div>
+        <p>anos transformando acontecimentos em histórias</p>
+      </div>
+      <span class="cross"></span>
+      <div class="gear">
+        <div><span>Câmera</span><b>Sony A6600</b></div>
+        <div><span>Aéreo</span><b>DJI Mini 3</b></div>
+        <div><span>Edição</span><b>Premiere Pro</b></div>
+        <div><span>Ágil</span><b>CapCut</b></div>
+        <div><span>Ao vivo</span><b>Transmissões</b></div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 18h.01"/></svg></div><h4>Conteúdo para redes</h4><p>Reels, stories e feed com ritmo pensado para prender a atenção nos primeiros segundos.</p></div>
+      <div class="svc rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M5 12a7 7 0 0114 0M2 12a10 10 0 0120 0"/></svg></div><h4>Transmissões ao vivo</h4><p>Cerimônias, eventos e aulas transmitidos com sinal estável e enquadramento cuidadoso.</p></div>
+      <div class="svc rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h4>Videoaulas e institucional</h4><p>Gravação e edição de aulas e vídeos institucionais para o ensino superior.</p></div>
+      <div class="svc rv d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20"/></svg></div><h4>Eventos, shows e cinema</h4><p>Parceria de mais de 10 anos com a Video Brun e making of do longa "Eduardo e Mônica".</p></div>
+    </div>
+
+    <div class="filters rv" id="filters">
+      <button class="chip on" data-f="all">Todos</button>
+      <button class="chip" data-f="inst">Institucional</button>
+      <button class="chip" data-f="redes">Redes sociais</button>
+      <button class="chip" data-f="cine">Eventos e cinema</button>
+    </div>
+    <div class="works" id="works"></div>
+  </div>
+</section>
+
+<!-- 03 SOCIAL MEDIA -->
+<section class="section zone z-soc" id="social">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow rv">Área 03</p>
+        <h2 class="h2 rv d1">Social Media e<br><span class="ac">presença digital.</span></h2>
+        <p class="lead rv d2">Gestão completa de redes sociais: estratégia, produção, publicação, atendimento e análise. Une o olhar de quem filma com a organização de quem trabalha com dados.</p>
+      </div>
+      <span class="sec-num rv">03</span>
+    </div>
+
+    <div class="split rev">
+      <div class="rv">
+        <div class="cards" style="margin-top:0">
+          <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h4>Planejamento e calendário</h4><p>Linha editorial, pautas e calendário de publicações.</p></div>
+          <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></div><h4>Criação de conteúdo</h4><p>Reels, stories, carrosséis e legendas com identidade da marca.</p></div>
+          <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h4>Atendimento e reputação</h4><p>Comentários, mensagens, contatos qualificados e avaliações no Google.</p></div>
+          <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg></div><h4>Tráfego e relatórios</h4><p>Gestão de tráfego, métricas de evolução e otimização contínua.</p></div>
+        </div>
+      </div>
+      <div class="phone-wrap rv d1">
+        <div class="phone">
+          <div class="screen">
+            <span class="notch"></span>
+            <div class="ph-top"><span>@suamarca</span><span>♡ ✉</span></div>
+            <div class="stories"><span class="st"><i></i></span><span class="st"><i></i></span><span class="st"><i></i></span><span class="st"><i></i></span><span class="st"><i></i></span></div>
+            <div class="feed"><div class="feed-t" id="feedT"></div></div>
+          </div>
+        </div>
+        <span class="bubble b1">Alcance <b>+ orgânico</b></span>
+        <span class="bubble b2">Reels <b>no ar</b></span>
+        <span class="bubble b3">Novo contato <b>qualificado</b></span>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step rv"><h5>Diagnóstico</h5><p>Análise do perfil, do público e dos concorrentes.</p></div>
+      <div class="step rv d1"><h5>Estratégia</h5><p>Posicionamento, linha editorial e metas mensuráveis.</p></div>
+      <div class="step rv d2"><h5>Produção</h5><p>Captação, edição e design com padrão profissional.</p></div>
+      <div class="step rv d3"><h5>Publicação</h5><p>Postagem nos melhores horários e interação ativa.</p></div>
+      <div class="step rv d4"><h5>Resultados</h5><p>Relatórios claros e ajustes contínuos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 IAT -->
+<section class="section zone z-iat" id="iat">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow rv">Área 04</p>
+        <h2 class="h2 rv d1">Instrutor de<br><span class="ac">Armamento e Tiro.</span></h2>
+        <p class="lead rv d2">Instrutor de Armamento e Tiro (IAT), formado pela Combat Tático. Atuação didática com foco em segurança, fundamentos e conformidade com a legislação brasileira, aliada à produção de materiais de estudo e conteúdo audiovisual para o segmento.</p>
+      </div>
+      <span class="sec-num rv">04</span>
+    </div>
+
+    <div class="split">
+      <div class="hud rv">
+        <svg viewBox="0 0 400 400" aria-hidden="true">
+          <g class="rot"><circle cx="200" cy="200" r="180" fill="none" stroke="rgba(166,198,74,.35)" stroke-width="1" stroke-dasharray="4 10"/></g>
+          <g class="rot2"><circle cx="200" cy="200" r="150" fill="none" stroke="rgba(166,198,74,.22)" stroke-width="1" stroke-dasharray="60 30"/></g>
+          <circle cx="200" cy="200" r="118" fill="none" stroke="rgba(166,198,74,.15)"/>
+          <circle cx="200" cy="200" r="80" fill="none" stroke="rgba(166,198,74,.2)"/>
+          <circle cx="200" cy="200" r="42" fill="none" stroke="rgba(166,198,74,.3)"/>
+          <g class="ret">
+            <circle cx="200" cy="200" r="60" fill="none" stroke="#A6C64A" stroke-width="1.5"/>
+            <path d="M200 120v50M200 230v50M120 200h50M230 200h50" stroke="#A6C64A" stroke-width="1.5"/>
+            <circle cx="200" cy="200" r="3.5" fill="#A6C64A"/>
+          </g>
+          <text x="200" y="365" fill="rgba(166,198,74,.7)" font-family="JetBrains Mono,monospace" font-size="11" text-anchor="middle" letter-spacing="3">SEGURANÇA EM PRIMEIRO LUGAR</text>
+        </svg>
+        <span class="hud-lbl l1">IAT · Combat Tático</span>
+        <span class="hud-lbl l2">Brasília/DF</span>
+        <span class="hud-lbl l3">Legislação vigente</span>
+        <span class="hud-lbl l4">@ricardo_taira</span>
+      </div>
+      <div class="rv d1">
+        <div class="cred">
+          <span class="seal">IAT</span>
+          <div><b>Instrutor de Armamento e Tiro (IAT), formado pela Combat Tático</b><span>Credencial para instrução de manuseio e tiro, conforme normas da Polícia Federal.</span></div>
+        </div>
+        <div class="cards" style="margin-top:16px">
+          <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div><h4>Cursos de pistola</h4><p>Curso Operador de Pistola Básico, ministrado com instrutores parceiros no Clube Matsumoto.</p></div>
+          <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><h4>Simulador de prova IAT</h4><p>Simulados interativos para a prova da PF, com cerca de 200 questões e gabarito comentado.</p></div>
+          <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h4>Materiais didáticos</h4><p>Apresentações sobre nomenclatura, funcionamento e manutenção, otimizadas para celular.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="law">
+      <div class="rv"><b>Lei 10.826/2003</b><p>Estatuto do Desarmamento: registro, posse e porte.</p></div>
+      <div class="rv d1"><b>Decreto 11.615/2023</b><p>Regulamenta o Estatuto e as atividades de CAC.</p></div>
+      <div class="rv d2"><b>Portaria 008/2021</b><p>Normas aplicáveis à atividade de instrução.</p></div>
+      <div class="rv d3"><b>Polícia Federal</b><p>Órgão responsável pelo credenciamento do IAT.</p></div>
+    </div>
+
+    <div class="rules">
+      <div class="rule rv"><span class="n">1</span><p><b>Toda arma está sempre carregada</b> até que se prove o contrário.</p></div>
+      <div class="rule rv d1"><span class="n">2</span><p><b>Nunca aponte</b> para algo que não queira destruir.</p></div>
+      <div class="rule rv d2"><span class="n">3</span><p><b>Dedo fora do gatilho</b> até estar pronto para atirar.</p></div>
+      <div class="rule rv d3"><span class="n">4</span><p><b>Conheça o alvo</b> e o que está atrás dele.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRÍCULO -->
+<section class="section" id="curriculo">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow rv">Currículo</p>
+        <h2 class="h2 rv d1">Trajetória e<br><span class="g">experiência.</span></h2>
+      </div>
+      <span class="sec-num rv">05</span>
+    </div>
+
+    <div class="tabs rv" role="tablist">
+      <button class="tab on" data-t="exp" role="tab">Experiência</button>
+      <button class="tab" data-t="cred" role="tab">Credenciais</button>
+      <button class="tab" data-t="hab" role="tab">Habilidades</button>
+    </div>
+
+    <div class="pane on" id="p-exp">
+      <div class="tl">
+        <div class="tl-i rv"><span class="when">Atual · 11+ anos na instituição</span><h4>Produtor audiovisual e TI</h4><div class="org">Centro Universitário Uni LS · Taguatinga/DF</div>
+          <p>Atuação no NEAD com vídeos para redes sociais, transmissões e gravação de videoaulas. Anteriormente analista no Setor de Tecnologia, responsável por infraestrutura, suporte, automação, dashboards e base de conhecimento de IA.</p></div>
+        <div class="tl-i rv"><span class="when">Atual</span><h4>Responsável Técnico</h4><div class="org">SINDEPES-DF</div>
+          <p>Comunicação, marketing e suporte técnico: registro de eventos, propostas, orçamentos de CFTV e videoconferência, e operação de áudio no auditório.</p></div>
+        <div class="tl-i rv"><span class="when">10+ anos de parceria</span><h4>Videomaker parceiro</h4><div class="org">Video Brun</div>
+          <p>Eventos, shows, clipes, transmissões, curtas e longas-metragens.</p></div>
+        <div class="tl-i rv"><span class="when">Cinema</span><h4>Making of</h4><div class="org">Longa "Eduardo e Mônica" · direção de Rene Sampaio</div>
+          <p>Registro dos bastidores da produção cinematográfica nacional.</p></div>
+        <div class="tl-i rv"><span class="when">Atual</span><h4>Instrutor de Armamento e Tiro</h4><div class="org">Clube Matsumoto · instrutores parceiros</div>
+          <p>Curso Operador de Pistola Básico e produção de materiais de estudo para candidatos a IAT.</p></div>
+        <div class="tl-i rv"><span class="when">Autônomo</span><h4>Social Media e serviços técnicos</h4><div class="org">Empresário individual (ME)</div>
+          <p>Gestão de redes sociais, marketing digital, manutenção de computadores, sonorização e iluminação para clientes de diversos segmentos.</p></div>
+      </div>
+    </div>
+
+    <div class="pane" id="p-cred">
+      <div class="cols2">
+        <div class="box rv"><h5>Instrutor de Armamento e Tiro (IAT)</h5><p style="color:var(--muted)">Formado pela Combat Tático. Atuação conforme Lei 10.826/2003, Decreto 11.615/2023 e Portaria 008/2021.</p></div>
+        <div class="box rv d1"><h5>Ensino superior</h5><p style="color:var(--muted)">Mais de 11 anos de vivência em instituição de ensino superior, entre tecnologia, EAD e comunicação.</p></div>
+        <div class="box rv"><h5>Cinema nacional</h5><p style="color:var(--muted)">Making of do longa "Eduardo e Mônica", dirigido por Rene Sampaio.</p></div>
+        <div class="box rv d1"><h5>Empresa própria</h5><p style="color:var(--muted)">CNPJ ativo como empresário individual para prestação de serviços.</p></div>
+      </div>
+    </div>
+
+    <div class="pane" id="p-hab">
+      <div class="cols2">
+        <div class="box rv"><h5>Tecnologia</h5><div class="chips"><span>Active Directory</span><span>Google Workspace</span><span>pfSense</span><span>iptables</span><span>Ubiquiti</span><span>Python</span><span>Pandas</span><span>HTML/CSS/JS</span><span>GitHub Pages</span><span>Dashboards</span></div></div>
+        <div class="box rv d1"><h5>Audiovisual</h5><div class="chips"><span>Sony A6600</span><span>DJI Mini 3</span><span>Premiere Pro</span><span>CapCut</span><span>Transmissão ao vivo</span><span>Sonorização</span><span>Iluminação</span></div></div>
+        <div class="box rv"><h5>Social Media</h5><div class="chips"><span>Planejamento</span><span>Calendário editorial</span><span>Reels</span><span>Stories</span><span>Legendas</span><span>Atendimento</span><span>Google Meu Negócio</span><span>Tráfego</span><span>Relatórios</span></div></div>
+        <div class="box rv d1"><h5>Instrução de tiro</h5><div class="chips"><span>Segurança</span><span>Fundamentos de tiro</span><span>Nomenclatura</span><span>Manutenção</span><span>Legislação</span><span>Didática</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="section contact" id="contato">
+  <span class="ring-bg" aria-hidden="true"></span>
+  <div class="wrap">
+    <p class="eyebrow rv" style="justify-content:center">Contato</p>
+    <div class="big rv d1">Vamos criar<br><span class="g">algo juntos?</span></div>
+    <p class="lead rv d2">Tecnologia, vídeo, redes sociais ou instrução de tiro: me chame e conversamos sobre o seu projeto.</p>
+    <div class="cta rv d3">
+      <a href="https://wa.me/5561999435583" target="_blank" rel="noopener" class="btn btn-gold mag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.5 8.5 0 01-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1121 11.5z"/></svg>
+        Chamar no WhatsApp</a>
+      <a href="https://instagram.com/ricardo_taira" target="_blank" rel="noopener" class="btn btn-line mag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+        @ricardo_taira</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap ft">
+    <div class="brand"><span class="mono">RT</span><span><b>Ricardo Taira</b><small>Brasília · DF</small></span></div>
+    <p>© 2026 Ricardo Taira. Todos os direitos reservados.</p>
+    <span class="sig">@ricardo_taira</span>
+  </div>
+</footer>
+
+<a href="#inicio" class="top-btn" id="topBtn" aria-label="Voltar ao topo">
+  <svg class="pr" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" id="topRing"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</a>
+
+<script>
+(function(){
+'use strict';
+var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var FINE = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+/* ---------- PRELOADER (com failsafe) ---------- */
+var loader = document.getElementById('loader');
+var ldBar = document.getElementById('ldBar'), ldPct = document.getElementById('ldPct');
+var pct = 0, ldDone = false;
+var ldTimer = setInterval(function(){
+  pct = Math.min(pct + Math.random()*14, 92);
+  ldBar.style.width = pct + '%'; ldPct.textContent = Math.round(pct) + '%';
+}, 120);
+function finishLoader(){
+  if(ldDone) return; ldDone = true;
+  clearInterval(ldTimer);
+  ldBar.style.width = '100%'; ldPct.textContent = '100%';
+  setTimeout(function(){ loader.classList.add('done'); startHero(); }, 280);
+}
+window.addEventListener('load', finishLoader);
+setTimeout(finishLoader, 2600);
+
+/* ---------- HERO: letras ---------- */
+document.querySelectorAll('[data-split]').forEach(function(row, r){
+  var txt = row.textContent; row.textContent = '';
+  for(var i=0;i<txt.length;i++){
+    var s = document.createElement('span'); s.className = 'ch';
+    s.textContent = txt[i]; s.style.animationDelay = (r*0.18 + i*0.045) + 's';
+    row.appendChild(s);
+  }
+});
+var heroStarted = false;
+function startHero(){
+  if(heroStarted) return; heroStarted = true;
+  document.getElementById('heroName').classList.add('go');
+  typer();
+}
+
+/* ---------- TYPEWRITER ---------- */
+var roles = ['Analista e Professor de TI','Videomaker','Social Media','Instrutor de Armamento e Tiro'];
+var typed = document.getElementById('typed');
+function typer(){
+  if(RM) return;
+  var ri = 0, ci = roles[0].length, del = true;
+  function tick(){
+    var word = roles[ri];
+    if(del){ ci--; typed.textContent = word.slice(0,ci);
+      if(ci<=0){ del=false; ri=(ri+1)%roles.length; } setTimeout(tick, 38); }
+    else { ci++; typed.textContent = roles[ri].slice(0,ci);
+      if(ci>=roles[ri].length){ del=true; setTimeout(tick, 1900); return; } setTimeout(tick, 70); }
+  }
+  setTimeout(tick, 2200);
+}
+
+/* ---------- NAV ---------- */
+var nav = document.getElementById('nav'), prog = document.getElementById('prog');
+var topBtn = document.getElementById('topBtn'), topRing = document.getElementById('topRing');
+var navLinks = document.querySelectorAll('.links a:not(.btn-nav)');
+var secs = [];
+navLinks.forEach(function(a){ var s = document.querySelector(a.getAttribute('href')); if(s) secs.push([a,s]); });
+var ticking = false;
+function onScroll(){
+  var y = window.scrollY || window.pageYOffset;
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  var p = h>0 ? y/h : 0;
+  nav.classList.toggle('sc', y>40);
+  prog.style.width = (p*100)+'%';
+  topBtn.classList.toggle('on', y>600);
+  topRing.style.strokeDashoffset = 151 - 151*p;
+  var cur = null;
+  secs.forEach(function(pair){ if(pair[1].getBoundingClientRect().top < 140) cur = pair[0]; });
+  navLinks.forEach(function(a){ a.classList.toggle('on', a===cur); });
+  ticking = false;
+}
+window.addEventListener('scroll', function(){ if(!ticking){ ticking=true; requestAnimationFrame(onScroll); } }, {passive:true});
+onScroll();
+
+var burger = document.getElementById('burger'), drawer = document.getElementById('drawer'), scrim = document.getElementById('scrim');
+function menu(open){
+  burger.classList.toggle('x', open); drawer.classList.toggle('open', open); scrim.classList.toggle('on', open);
+  burger.setAttribute('aria-expanded', open); drawer.setAttribute('aria-hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+burger.addEventListener('click', function(){ menu(!drawer.classList.contains('open')); });
+scrim.addEventListener('click', function(){ menu(false); });
+drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu(false); }); });
+window.addEventListener('resize', function(){ if(window.innerWidth>900) menu(false); });
+
+/* ---------- REVEAL + gatilhos ---------- */
+var rvs = document.querySelectorAll('.rv');
+function showAll(){ rvs.forEach(function(el){ el.classList.add('in'); }); }
+if('IntersectionObserver' in window && !RM){
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.1, rootMargin:'0px 0px -6% 0px'});
+  rvs.forEach(function(el){ io.observe(el); });
+  setTimeout(function(){ rvs.forEach(function(el){ if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in'); }); }, 3200);
+} else { showAll(); }
+
+function onView(el, fn, th){
+  if(!el) return;
+  if(!('IntersectionObserver' in window)){ fn(); return; }
+  var o = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ fn(); o.disconnect(); } }); }, {threshold:th||.3});
+  o.observe(el);
+}
+
+/* contadores */
+document.querySelectorAll('.cnt').forEach(function(el){
+  onView(el, function(){
+    var to = +el.getAttribute('data-to');
+    if(RM){ el.textContent = to; return; }
+    var t0 = performance.now(), d = 1600;
+    (function step(t){ var k = Math.min((t-t0)/d,1); el.textContent = Math.round(to*(1-Math.pow(1-k,3))); if(k<1) requestAnimationFrame(step); })(t0);
+  }, .5);
+});
+/* barras */
+document.querySelectorAll('.bar i').forEach(function(b){ onView(b, function(){ b.style.width = b.getAttribute('data-w') + '%'; }, .4); });
+
+/* ---------- TERMINAL ---------- */
+var termLines = [
+  ['p','$ ','whoami'],['','','ricardo_taira · analista e professor de TI'],
+  ['p','$ ','systemctl status infra'],['ok','● ','active directory ........ OK'],['ok','● ','google workspace ........ OK'],
+  ['ok','● ','pfsense firewall ........ OK'],['ok','● ','rede wireless ubiquiti .. OK'],
+  ['p','$ ','python gerar_dashboard.py'],['w','» ','processando dados de atendimento...'],['ok','✓ ','painel publicado no GitHub Pages'],
+  ['p','$ ','echo $MISSAO'],['','','tecnologia que funciona e pessoas que sabem usar']
+];
+var term = document.getElementById('term');
+onView(term, function(){
+  if(RM){ term.innerHTML = termLines.map(function(l){ return '<span class="'+l[0]+'">'+l[1]+'</span>'+l[2]; }).join('\n'); return; }
+  var li = 0;
+  function line(){
+    if(li>=termLines.length){ term.insertAdjacentHTML('beforeend','<span class="p">$ </span><span class="cur-t"></span>'); return; }
+    var l = termLines[li], span = document.createElement('span'), pre = document.createElement('span');
+    pre.className = l[0]; pre.textContent = l[1];
+    term.appendChild(pre); term.appendChild(span);
+    var ci = 0, isCmd = l[0]==='p';
+    (function ch(){
+      ci++; span.textContent = l[2].slice(0,ci);
+      if(ci<l[2].length) setTimeout(ch, isCmd?42:10);
+      else { term.appendChild(document.createTextNode('\n')); li++; setTimeout(line, isCmd?260:120); }
+    })();
+  }
+  line();
+}, .35);
+
+/* ---------- TIMECODE ---------- */
+var tc = document.getElementById('tc'), f = 0;
+if(!RM) setInterval(function(){ f++; var fr=f%24, s=Math.floor(f/24)%60, m=Math.floor(f/1440)%60, h=Math.floor(f/86400);
+  tc.textContent = [h,m,s,fr].map(function(n){ return (n<10?'0':'')+n; }).join(':'); }, 1000/24);
+
+/* ---------- FEED DO CELULAR ---------- */
+var posts = [
+  ['linear-gradient(135deg,#6a3cff,#c38bff)','Bastidores<br>do evento','1.248'],
+  ['linear-gradient(135deg,#ff5a5a,#e2b84f)','Dica rápida<br>em 30s','986'],
+  ['linear-gradient(135deg,#0f9b8e,#4fd1ff)','Conheça<br>a equipe','2.031'],
+  ['linear-gradient(135deg,#e2b84f,#a8842a)','Novidade<br>da semana','1.577']
+];
+var feedT = document.getElementById('feedT'), html = '';
+for(var k=0;k<2;k++) posts.forEach(function(p){
+  html += '<div class="post"><div class="img" style="background:'+p[0]+'"><b>'+p[1]+'</b></div><div class="act"><span class="hrt">♥</span><span>'+p[2]+' curtidas</span></div></div>';
+});
+feedT.innerHTML = html;
+
+/* ---------- ABAS ---------- */
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click', function(){
+    document.querySelectorAll('.tab').forEach(function(x){ x.classList.remove('on'); });
+    document.querySelectorAll('.pane').forEach(function(x){ x.classList.remove('on'); });
+    t.classList.add('on');
+    var p = document.getElementById('p-'+t.getAttribute('data-t'));
+    p.classList.add('on');
+    p.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
+  });
+});
+
+/* ---------- VÍDEOS (Instagram + YouTube) ---------- */
+var WORKS = [
+  {ig:'DYaoW2bv6Z6',c:'inst',l:'Institucional',t:'Caminhada da Saúde · Taguapark',b:['Sony A6600','DJI Mini 3','Premiere']},
+  {ig:'DYXs59fESV9',c:'inst',l:'Institucional',t:'Uni LS e Casa Thomas Jefferson',b:['Sony A6600','Premiere']},
+  {ig:'DYFeAS_Tqau',c:'redes',l:'Redes sociais',t:'Simulado Realístico',b:['iPhone 11','CapCut']},
+  {ig:'DaTKZ32z2Gs',c:'redes',l:'Redes sociais',t:'4ª Semana da Valorização da Enfermagem',b:['iPhone 11','Story para feed']},
+  {ig:'DajS2r7Rq4q',c:'redes',l:'Redes sociais',t:'SINDEPES-DF · registro institucional',b:['iPhone 11','Luz ambiente']},
+  {ig:'CgWc7L4ubhx',c:'cine',l:'Eventos',t:'Pan-Americano de Wushu',b:['Video Brun','Evento']},
+  {ig:'Chsg4t-ptdL',c:'cine',l:'Cinema',t:'Making of · "Eduardo e Mônica"',b:['Cinema','Rene Sampaio'],
+   n:'Por ser um Reel, ao tocar o Instagram abre o vídeo no perfil oficial do filme.'},
+  {yt:'aNS5dlCBG5w',c:'cine',l:'Cinema',t:'"Eduardo e Mônica" · cinema',b:['YouTube','Cinema'],
+   cover:'https://lagosul.com.br/wp-content/uploads/2022/02/5.2-Eduardo-e-Monica-filme-arte-divulgacao-876x824.jpg',
+   n:'Este vídeo abre no YouTube ao tocar (reprodução incorporada desativada pelo autor).'}
+];
+var worksEl = document.getElementById('works');
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+WORKS.forEach(function(w,i){
+  var a = document.createElement('article');
+  a.className = 'wk pop'; a.setAttribute('data-c', w.c);
+  var body;
+  if(w.yt){
+    body = '<div class="wk-b link"><a class="yt" href="https://www.youtube.com/watch?v='+w.yt+'" target="_blank" rel="noopener" aria-label="Assistir no YouTube">'
+      + '<img src="'+w.cover+'" alt="'+esc(w.t)+'" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="tg">Abrir no YouTube ↗</span></a></div>';
+    a.setAttribute('data-done','1');
+  } else {
+    a.setAttribute('data-ig', w.ig);
+    body = '<div class="wk-b"><div class="load"><div class="spin"></div>Carregando vídeo…</div></div>';
+  }
+  a.innerHTML = '<div class="wk-h"><div class="t"><span class="wk-cat">'+w.l+'</span><span class="wk-n">'+(i<9?'0':'')+(i+1)+'</span></div>'
+    + '<h4>'+esc(w.t)+'</h4><div class="bdg">'+w.b.map(function(x){ return '<span>'+esc(x)+'</span>'; }).join('')+'</div>'
+    + (w.n ? '<p class="note">ⓘ '+esc(w.n)+'</p>' : '') + '</div>' + body;
+  worksEl.appendChild(a);
+  var img = a.querySelector('.yt img');
+  if(img) img.addEventListener('error', function(){ img.style.display='none'; img.parentNode.classList.add('nocover'); });
+});
+
+var igReq = null;
+function loadIG(){
+  if(igReq) return igReq;
+  igReq = new Promise(function(res){
+    if(window.instgrm){ res(); return; }
+    var s = document.createElement('script'); s.src = 'https://www.instagram.com/embed.js'; s.async = true;
+    s.onload = function(){ res(); }; s.onerror = function(){ res(); };
+    document.body.appendChild(s);
+    setTimeout(res, 8000);
+  });
+  return igReq;
+}
+function mount(a){
+  if(a.getAttribute('data-done')) return;
+  a.setAttribute('data-done','1');
+  var box = a.querySelector('.wk-b'), url = 'https://www.instagram.com/p/'+a.getAttribute('data-ig')+'/';
+  loadIG().then(function(){
+    if(window.instgrm && window.instgrm.Embeds){
+      box.innerHTML = '<blockquote class="instagram-media" data-instgrm-permalink="'+url+'" data-instgrm-version="14"></blockquote>';
+      window.instgrm.Embeds.process();
+    } else {
+      box.innerHTML = '<div class="load">Não foi possível carregar o vídeo agora. Recarregue a página.</div>';
+    }
+  });
+}
+var wks = worksEl.querySelectorAll('.wk');
+if('IntersectionObserver' in window){
+  var wio = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ mount(e.target); wio.unobserve(e.target); } }); }, {rootMargin:'400px 0px'});
+  wks.forEach(function(w){ wio.observe(w); });
+} else { wks.forEach(mount); }
+
+document.querySelectorAll('#filters .chip').forEach(function(ch){
+  ch.addEventListener('click', function(){
+    document.querySelectorAll('#filters .chip').forEach(function(x){ x.classList.remove('on'); });
+    ch.classList.add('on');
+    var f = ch.getAttribute('data-f');
+    wks.forEach(function(w){
+      var show = f==='all' || w.getAttribute('data-c')===f;
+      w.classList.toggle('hide', !show);
+      if(show){ w.classList.remove('pop'); void w.offsetWidth; w.classList.add('pop'); mount(w); }
+    });
+  });
+});
+
+/* ---------- EFEITOS DESKTOP: cursor, tilt, brilho, magnético ---------- */
+if(FINE && !RM){
+  document.body.classList.add('has-cursor');
+  var cur = document.getElementById('cur'), dot = document.getElementById('curDot');
+  var mx=0,my=0,cx=0,cy=0;
+  window.addEventListener('mousemove', function(e){ mx=e.clientX; my=e.clientY; dot.style.transform='translate('+mx+'px,'+my+'px)'; });
+  (function loop(){ cx+=(mx-cx)*.16; cy+=(my-cy)*.16; cur.style.transform='translate('+cx+'px,'+cy+'px)'; requestAnimationFrame(loop); })();
+  document.querySelectorAll('a,button,.tile,.svc,.area').forEach(function(el){
+    el.addEventListener('mouseenter', function(){ cur.classList.add('hover'); });
+    el.addEventListener('mouseleave', function(){ cur.classList.remove('hover'); });
+  });
+  document.querySelectorAll('.glow').forEach(function(t){
+    t.addEventListener('mousemove', function(e){ var r=t.getBoundingClientRect(); t.style.setProperty('--mx',(e.clientX-r.left)+'px'); t.style.setProperty('--my',(e.clientY-r.top)+'px'); });
+  });
+  document.querySelectorAll('.tilt').forEach(function(c){
+    c.addEventListener('mousemove', function(e){ var r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      c.style.transform='perspective(900px) rotateY('+(x*10)+'deg) rotateX('+(-y*10)+'deg)'; });
+    c.addEventListener('mouseleave', function(){ c.style.transform=''; });
+  });
+  document.querySelectorAll('.mag').forEach(function(b){
+    b.addEventListener('mousemove', function(e){ var r=b.getBoundingClientRect(); b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.28)+'px)'; });
+    b.addEventListener('mouseleave', function(){ b.style.transform=''; });
+  });
+}
+
+/* ---------- CANVAS DO HERO ---------- */
+(function(){
+  var cv = document.getElementById('fx'); if(!cv || !cv.getContext) return;
+  var ctx = cv.getContext('2d'), W, H, pts = [], raf = null, visible = true, mouse = {x:-999,y:-999};
+  function size(){
+    var dpr = Math.min(window.devicePixelRatio||1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W*dpr; cv.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    var n = Math.max(24, Math.min(Math.floor(W*H/14000), 95));
+    pts = []; for(var i=0;i<n;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.4});
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<pts.length;i++){
+      var p = pts[i];
+      if(!RM){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>W) p.vx*=-1; if(p.y<0||p.y>H) p.vy*=-1;
+        var dx=p.x-mouse.x, dy=p.y-mouse.y, d=dx*dx+dy*dy; if(d<12000){ p.x+=dx*.02; p.y+=dy*.02; } }
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(246,219,142,.55)'; ctx.fill();
+      for(var j=i+1;j<pts.length;j++){
+        var q=pts[j], ex=p.x-q.x, ey=p.y-q.y, e=ex*ex+ey*ey;
+        if(e<15000){ ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.strokeStyle='rgba(226,184,79,'+(.16*(1-e/15000))+')'; ctx.lineWidth=1; ctx.stroke(); }
+      }
+    }
+    if(!RM && visible && !document.hidden) raf = requestAnimationFrame(draw); else raf = null;
+  }
+  function restart(){ if(!raf && !RM && visible && !document.hidden) raf = requestAnimationFrame(draw); }
+  size(); draw();
+  var rt; window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){ size(); if(RM) draw(); }, 150); });
+  document.addEventListener('visibilitychange', restart);
+  cv.parentNode.addEventListener('mousemove', function(e){ var r=cv.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top; });
+  cv.parentNode.addEventListener('mouseleave', function(){ mouse.x=-999; mouse.y=-999; });
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ visible = es[0].isIntersecting; restart(); }).observe(cv);
+  }
+})();
+
+})();
+</script>
+</body>
+</html>
